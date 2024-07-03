@@ -1,0 +1,991 @@
+ <!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>My Phone</title>
+        <link rel="icon" type="image/x-icon" href="/static/images/favicon.png">
+        <link rel="stylesheet" href="/static/Css/style.css">
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+            crossorigin="anonymous" />
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body>
+        <!-- Navbar Start -->
+        <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+            <div class="container-fluid">
+                <!-- <a class="navbar-brand" href="#">NotesApp</a> -->
+                <a class="navbar-brand" href="#">
+                    <img src="/static/images/main-logo.png" alt="Logo"
+                        width="35" height="30"
+                        class="d-inline-block align-text-top">
+                    My Phone
+                </a>
+                <button class="navbar-toggler" type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse"
+                    id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page"
+                                href="/">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page"
+                                href="/shop">Shop</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page"
+                                href="/about">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page"
+                                href="/contact">Contact</a>
+                        </li>
+
+                    </ul>
+                    <form class="d-flex" role="search">
+                        <input class="form-control me-2" type="search"
+                            placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success"
+                            type="submit">Search</button>
+                    </form>
+                    <button type="button" data-bs-toggle="modal"
+                        data-bs-target="#loginModal"
+                        class="btn btn-outline-warning mx-2">Login</button>
+                    <button type="button" data-bs-toggle="modal"
+                        data-bs-target="#signupModal"
+                        class="btn btn-outline-primary">Signup</button>
+                </div>
+            </div>
+        </nav>
+        <!-- Navbar End -->
+
+        <!-- Login Modal Start -->
+        <div class="modal fade" id="loginModal" tabindex="-1"
+            aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5"
+                            id="exampleModalLabel">Login</h1>
+                        <button type="button" class="btn-close"
+                            data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="mb-3">
+                                <label for="exampleInputEmail1"
+                                    class="form-label">Email address</label>
+                                <input type="email" class="form-control"
+                                    id="exampleInputEmail1"
+                                    aria-describedby="emailHelp">
+                                <div id="emailHelp" class="form-text">We'll
+                                    never share your email with anyone
+                                    else.</div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleInputPassword1"
+                                    class="form-label">Password</label>
+                                <input type="password" class="form-control"
+                                    id="exampleInputPassword1">
+                            </div>
+                            <div class="mb-3 form-check">
+                                <input type="checkbox" class="form-check-input"
+                                    id="exampleCheck1">
+                                <label class="form-check-label"
+                                    for="exampleCheck1">Check me out</label>
+                            </div>
+                            <button type="submit"
+                                class="btn btn-primary">Login</button>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary"
+                            data-bs-dismiss="modal">Close</button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Login Modal End -->
+
+        <!-- Signup Modal Start -->
+        <div class="modal fade" id="signupModal" tabindex="-1"
+            aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5"
+                            id="exampleModalLabel">Signup</h1>
+                        <button type="button" class="btn-close"
+                            data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form class="row g-3 needs-validation" novalidate>
+                            <div class="col-md-6">
+                                <label for="validationCustom01"
+                                    class="form-label">First name</label>
+                                <input type="text" class="form-control"
+                                    id="validationCustom01" required>
+                                <div class="valid-feedback">
+                                    Looks good!
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="validationCustom02"
+                                    class="form-label">Last name</label>
+                                <input type="text" class="form-control"
+                                    id="validationCustom02" required>
+                                <div class="valid-feedback">
+                                    Looks good!
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="validationCustomUsername"
+                                    class="form-label">Username</label>
+                                <div class="input-group has-validation">
+                                    <span class="input-group-text"
+                                        id="inputGroupPrepend">@</span>
+                                    <input type="text" class="form-control"
+                                        id="validationCustomUsername"
+                                        aria-describedby="inputGroupPrepend"
+                                        required>
+                                    <div class="invalid-feedback">
+                                        Please choose a username.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="validationCustom01"
+                                    class="form-label">Password</label>
+                                <input type="password" class="form-control"
+                                    id="validationCustom01" required>
+                                <div class="valid-feedback">
+                                    Looks good!
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="validationCustom03"
+                                    class="form-label">City</label>
+                                <input type="text" class="form-control"
+                                    id="validationCustom03" required>
+                                <div class="invalid-feedback">
+                                    Please provide a valid city.
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <label for="validationCustom04"
+                                    class="form-label">State</label>
+                                <select class="form-select"
+                                    id="validationCustom04" required>
+                                    <option>Gujarat</option>
+                                    <option>Goa</option>
+                                    <option>Delhi</option>
+                                    <option>Punjab</option>
+                                    <option>Other</option>
+                                </select>
+                                <div class="invalid-feedback">
+                                    Please select a valid state.
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <label for="validationCustom05"
+                                    class="form-label">Mobile</label>
+                                <input type="number" class="form-control"
+                                    id="validationCustom05" required>
+                                <div class="invalid-feedback">
+                                    Please provide a valid zip.
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-check">
+                                    <input class="form-check-input"
+                                        type="checkbox" value id="invalidCheck"
+                                        required>
+                                    <label class="form-check-label"
+                                        for="invalidCheck">
+                                        Agree to terms and conditions
+                                    </label>
+                                    <div class="invalid-feedback">
+                                        You must agree before submitting.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <button class="btn btn-primary"
+                                    type="submit">Signup</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary"
+                            data-bs-dismiss="modal">Close</button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Signup Modal End -->
+
+        <!-- Card Start -->
+        <div class="cards">
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <a href="#"><img src="/static/images/card-2.png"
+                                alt="Avatar"></a>
+                    </div>
+                    <div class="flip-card-back">
+                        <h5>Iphone</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <a href="#"><img src="/static/images/card-3.png"
+                                alt="Avatar"></a>
+                    </div>
+                    <div class="flip-card-back">
+                        <h5>Android</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <a href="#"><img src="/static/images/card-4.png"
+                                alt="Avatar"></a>
+                    </div>
+                    <div class="flip-card-back">
+                        <h5>KeyPade</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <a href="#"><img src="/static/images/card-1.png"
+                                alt="Avatar"></a>
+                    </div>
+                    <div class="flip-card-back">
+                        <h5>Tablate</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <a href="#"><img src="/static/images/card-5.png"
+                                alt="Avatar"></a>
+                    </div>
+                    <div class="flip-card-back">
+                        <h5>Accessories</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <a href="#"><img src="/static/images/card-6.png"
+                                alt="Avatar"></a>
+                    </div>
+                    <div class="flip-card-back">
+                        <h5>Laptop-Bag</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Card End -->
+
+        <!-- Slider Start -->
+        <div id="carouselExampleControls" class="carousel slide"
+            data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="/static/images/Banner-1.jpg" class="d-block w-100"
+                        alt="..." style="height: 550px;">
+
+                </div>
+                <div class="carousel-item">
+                    <img src="/static/images/Banner-2.webp"
+                        class="d-block w-100" alt="..." style="height: 550px;">
+                </div>
+                <div class="carousel-item">
+                    <img src="/static/images/Banner-3.jpg" class="d-block w-100"
+                        alt="..." style="height: 550px;">
+                </div>
+                <div class="carousel-item">
+                    <img src="/static/images/Banner-4.jpg" class="d-block w-100"
+                        alt="..." style="height: 550px;">
+                </div>
+                <div class="carousel-item">
+                    <img src="/static/images/Banner-5.jpg" class="d-block w-100"
+                        alt="..." style="height: 550px;">
+                </div>
+                <div class="carousel-item">
+                    <img src="/static/images/Banner-6.jpg" class="d-block w-100"
+                        alt="..." style="height: 550px;">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button"
+                data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"
+                    aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button"
+                data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                <span class="carousel-control-next-icon"
+                    aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+        <!-- Slider End -->
+
+        <!-- STORES AND BRANCHES Start -->
+        <div class="container">
+            <div class="header">
+                <h1>MY PHONE MOBILE STORES AND BRANCHES</h1>
+                <hr style="width: 50px; margin:auto">
+                <p>MY PHONE are the No.1 Mobile Dealers with 8 retail mobile
+                    stores in Rajkot district and 1 mobile store in Morbi
+                    district. We offering the best prices & best offers in
+                    Gujarat.</p>
+            </div>
+            <div class="section">
+                <div class="card text-center mb-3" style="width: 25rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">SHAPAR(VERAVAL)</h5>
+                        <ul class="card-text">
+                            <li><p>VERAVAL MAIN ROAD,NR.C.A. MEDICAL,B/H.
+                                    POLICE STATION,
+                                    SHAPAR(VERAVAL),DIST-RAJKOT-360024</p></li>
+                            <li><span>DEPART </span>: 8530080062</li>
+                            <li><span>SALES DEPART</span> : 9512408282</li>
+                            <li><span>Website</span> : <a
+                                    href="/">www.myphone.com</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card text-center mb-3 mx-5" style="width: 25rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">ASTRON CHOWK (RAJKOT)</h5>
+                        <ul class="card-text">
+                            <li><p>ASTRON CHOWK,FOUR PLUS COMPLEX,SARDAR NAGAR
+                                    MAIN ROAD, RAJKOT-360001</p></li>
+                            <li><span>CONTACT NO </span>: 9712508282</li>
+                            <li><span>Website</span> : <a
+                                    href="/">www.myphone.com</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card text-center mb-3" style="width: 25rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">GONDAL ROAD (RAJKOT)</h5>
+                        <ul class="card-text">
+                            <li><p>GONDAL ROAD,MANSATA CHOWK,NR.PANCHSEEL SOC.,
+                                    RAJKOT-360002</p></li>
+                            <li><span>MOBILE DEPART</span> : 9512808282</li>
+                            <li><span>DEPART</span> : 9054908664</li>
+                            <li><span>Website </span>: <a
+                                    href="/">www.myphone.com</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="section">
+                <div class="card text-center mb-3" style="width: 25rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">MAVDI (RAJKOT)</h5>
+                        <ul class="card-text">
+                            <li><p>BAPASITARAM CHOWK,REAL PRIME COMPLEX,MAVDI,
+                                    RAJKOT-360004</p></li>
+                            <li><span>CONTACT NO</span>: 9104908664</li>
+                            <li><span>Website</span> : <a
+                                    href="/">www.myphone.com</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card text-center mb-3 mx-5" style="width: 25rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">MAVDI MAIN ROAD (RAJKOT)</h5>
+                        <ul class="card-text">
+                            <li><p>MAVDI MAIN ROAD,NAVAL NAGAR,OPP.BHARAT PETROL
+                                    PUMP, RAJKOT-360004</p></li>
+                            <li><span>CONTACT NO </span>: 9376801000</li>
+                            <li><span>Website</span> : <a
+                                    href="/">www.myphone.com</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card text-center mb-3" style="width: 25rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">GONDAL</h5>
+                        <ul class="card-text">
+                            <li><p>VIKRAMSINHJI COMPLEX,GUNDALA MAIN ROAD,
+                                    GONDAL-360311</p></li>
+                            <li><span> CONTACT NO</span> : 9824860482</li>
+                            <li><span>Website </span>: <a
+                                    href="/">www.myphone.com</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- STORES AND BRANCHES End -->
+
+        <!-- Our Services Start -->
+        <div class="card service">
+            <div class="card-body">
+                <div class="head">
+                    <h1 style="text-align: center;">Our Services</h1>
+                    <hr style="width: 300px; margin: auto; height:2px;">
+                </div>
+                <div id="carouselExampleFade"
+                    class="carousel slide carousel-fade"
+                    data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <!-- <img src="..." class="d-block w-100" alt="..."> -->
+                            <div class="card" style="width: 45rem;">
+                                <img src="/static/images/shop.png"
+                                    class="card-img-top" alt="...">
+                                <h5 class="card-title">MOBILE RETAIL
+                                    STORES</h5>
+                                <p class="card-text">My Phone is the
+                                    Biggest Mobile Shop in Rajkot. My Phone is
+                                    Rajkot's biggest retailer and
+                                    a one-stop mobile solution that provides
+                                    all brand Mobile Phones, Accessories at
+                                    one place.
+
+                                    You will find Big Mobile Range,
+                                    Knowledgeable Staff, Friendly
+                                    Environment and Competitive Prices at
+                                    our Mobile Store at Rajkot.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="card" style="width: 45rem;">
+                                <img src="/static/images/repairing.jpg"
+                                    class="card-img-top" alt="...">
+                                <h5 class="card-title">MOBILE REPAIRING</h5>
+                                <p class="card-text">We repair all Brands &
+                                    Models
+                                    <br>
+                                    We repair phones in just 1 day!
+                                    <br>
+                                    Certified professional team repair your
+                                    mobile device!
+                                    <br>
+                                    We provide quality & original parts/products
+                                    only!
+                                    <br>
+                                    Don't worry, your data is safe with us!</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="card" style="width: 45rem;">
+                                <img src="/static/images/electronics.jpg"
+                                    class="card-img-top" alt="...">
+                                <h5 class="card-title">ELECTRONICS</h5>
+                                <p class="card-text">My Phone & Electronics is
+                                    your
+                                    most preferable destination for consumer
+                                    electronics
+
+                                    <br>
+                                    You can shop for 500+ products across 11+
+                                    primary categories in a world-class
+                                    ambience.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button"
+                        data-bs-target="#carouselExampleFade"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon"
+                            aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button"
+                        data-bs-target="#carouselExampleFade"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon"
+                            aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+        <!-- Our Services End -->
+
+        <!--  -->
+        <div class="clearfix"></div>
+        <div class="section_holder30 two">
+            <div class="container">
+                <h3 class="section_title">Our Mobile Brands</h3>
+                <div class="title_bottom_line"></div>
+                <div class="clearfix"></div>
+
+                <section class="slider">
+                    <div class="flexslider style4 carousel">
+
+                        <!-- <ul class="flex-direction-nav ten">
+                            <li> <a class="flex-prev ten" href="#"></a> </li>
+                            <li> <a class="flex-next ten" href="#"></a> </li>
+                        </ul> -->
+                        <div class="flex-viewport"
+                            style="overflow: hidden; position: relative;"><ul
+                                class="slides"
+                                style="width: 3000%; transition-duration: 0s; transform: translate3d(-1175px, 0px, 0px);">
+                                <li
+                                    style="float: left; display: block; width: 190.833px;">
+                                    <div class="clint_logo">
+                                        <div class="hover_line"></div>
+                                        <img
+                                            src="/static/images/m1.png"
+                                            style="height: 60px; width: 160px;"
+                                            alt draggable="false"> </div>
+                                </li>
+                                <li
+                                    style="float: left; display: block; width: 190.833px;">
+                                    <div class="clint_logo">
+                                        <div class="hover_line"></div>
+                                        <img
+                                            src="/static/images/m2.png"
+                                            style="height: 60px; width: 160px;"
+                                            alt draggable="false"> </div>
+                                </li>
+                                <li
+                                    style="float: left; display: block; width: 190.833px;">
+                                    <div class="clint_logo">
+                                        <div class="hover_line"></div>
+                                        <img
+                                            src="/static/images/m3.png"
+                                            style="height: 60px; width: 160px;"
+                                            alt draggable="false"> </div>
+                                </li>
+                                <li
+                                    style="float: left; display: block; width: 190.833px;">
+                                    <div class="clint_logo">
+                                        <div class="hover_line"></div>
+                                        <img
+                                            src="/static/images/m4.png"
+                                            style="height: 60px; width: 160px;"
+                                            alt draggable="false"> </div>
+                                </li>
+                                <li
+                                    style="float: left; display: block; width: 190.833px;">
+                                    <div class="clint_logo">
+                                        <div class="hover_line"></div>
+                                        <img
+                                            src="/static/images/m5.jpg"
+                                            style="height: 60px; width: 160px;"
+                                            alt draggable="false"> </div>
+                                </li>
+                                <li
+                                    style="float: left; display: block; width: 190.833px;">
+                                    <div class="clint_logo">
+                                        <div class="hover_line"></div>
+                                        <img
+                                            src="/static/images/m6.png"
+                                            style="height: 60px; width: 160px;"
+                                            alt draggable="false"> </div>
+                                </li>
+                                <li
+                                    style="float: left; display: block; width: 190.833px;">
+                                    <div class="clint_logo">
+                                        <div class="hover_line"></div>
+                                        <img
+                                            src="/static/images/m7.png"
+                                            style="height: 60px; width: 160px;"
+                                            alt draggable="false"> </div>
+                                </li>
+                                <li
+                                    style="float: left; display: block; width: 190.833px;">
+                                    <div class="clint_logo">
+                                        <div class="hover_line"></div>
+                                        <img
+                                            src="/static/images/m8.png"
+                                            style="height: 60px; width: 160px;"
+                                            alt draggable="false"> </div>
+                                </li>
+                                <li
+                                    style="float: left; display: block; width: 190.833px;">
+                                    <div class="clint_logo">
+                                        <div class="hover_line"></div>
+                                        <img
+                                            src="/static/images/m9.png"
+                                            style="height: 60px; width: 160px;"
+                                            alt draggable="false"> </div>
+                                </li>
+                                <li
+                                    style="float: left; display: block; width: 190.833px;">
+                                    <div class="clint_logo">
+                                        <div class="hover_line"></div>
+                                        <img
+                                            src="/static/images/m10.png"
+                                            style="height: 60px; width: 160px;"
+                                            alt draggable="false"> </div>
+                                </li>
+                                <li
+                                    style="float: left; display: block; width: 190.833px;">
+                                    <div class="clint_logo">
+                                        <div class="hover_line"></div>
+                                        <img
+                                            src="/static/images/m11.png"
+                                            style="height: 60px; width: 160px;"
+                                            alt draggable="false"> </div>
+                                </li>
+                                <li
+                                    style="float: left; display: block; width: 190.833px;">
+                                    <div class="clint_logo">
+                                        <div class="hover_line"></div>
+                                        <img
+                                            src="/static/images/m12.png"
+                                            style="height: 60px; width: 160px;"
+                                            alt draggable="false"> </div>
+                                </li>
+                                <li
+                                    style="float: left; display: block; width: 190.833px;">
+                                    <div class="clint_logo">
+                                        <div class="hover_line"></div>
+                                        <img
+                                            src="/static/images/m13.png"
+                                            style="height: 60px; width: 160px;"
+                                            alt draggable="false"> </div>
+                                </li>
+                                <li
+                                    style="float: left; display: block; width: 190.833px;">
+                                    <div class="clint_logo">
+                                        <div class="hover_line"></div>
+                                        <img
+                                            src="/static/images/m14.png"
+                                            style="height: 60px; width: 160px;"
+                                            alt draggable="false"> </div>
+                                </li>
+                                <li
+                                    style="float: left; display: block; width: 190.833px;">
+                                    <div class="clint_logo">
+                                        <div class="hover_line"></div>
+                                        <img
+                                            src="/static/images/m8.png"
+                                            style="height: 60px; width: 160px;"
+                                            alt draggable="false"> </div>
+                                </li>
+                            </ul>
+                            </div>
+                            <!-- <ul class="flex-direction-nav">
+                                <li><a
+                                        class="flex-prev" href="#"></a></li>
+                                <li><a
+                                        class="flex-next"
+                                        href="#"></a></li>
+                            </ul> -->
+                        </div>
+                    </section>
+
+                </div>
+            </div>
+            <div class="section_holder30 two">
+                <div class="container">
+                    <h3 class="section_title">Our Electronics Brands</h3>
+                    <div class="title_bottom_line"></div>
+                    <div class="clearfix"></div>
+
+                    <section class="slider">
+                        <div class="flexslider style4 carousel">
+
+                            <!-- <ul class="flex-direction-nav ten">
+                                <li> <a class="flex-prev ten" href="#"></a>
+                                </li>
+                                <li> <a class="flex-next ten flex-disabled"
+                                        href="#"
+                                        tabindex="-1"></a> </li>
+                            </ul> -->
+                            <div class="flex-viewport"
+                                style="overflow: hidden; position: relative;"><ul
+                                    class="slides"
+                                    style="width: 3400%; transition-duration: 0s; transform: translate3d(-2154.17px, 0px, 0px);">
+                                    <li
+                                        style="float: left; display: block; width: 190.833px;">
+                                        <div class="clint_logo">
+                                            <div class="hover_line"></div>
+                                            <img src="/static/images/t1.png"
+                                                style="height: 60px; width: 160px;"
+                                                alt draggable="false"> </div>
+                                    </li>
+                                    <li
+                                        style="float: left; display: block; width: 190.833px;">
+                                        <div class="clint_logo">
+                                            <div class="hover_line"></div>
+                                            <img src="/static/images/t2.png"
+                                                style="height: 60px; width: 160px;"
+                                                alt draggable="false"> </div>
+                                    </li>
+                                    <li
+                                        style="float: left; display: block; width: 190.833px;">
+                                        <div class="clint_logo">
+                                            <div class="hover_line"></div>
+                                            <img src="/static/images/t3.png"
+                                                style="height: 60px; width: 160px;"
+                                                alt draggable="false"> </div>
+                                    </li>
+                                    <li
+                                        style="float: left; display: block; width: 190.833px;">
+                                        <div class="clint_logo">
+                                            <div class="hover_line"></div>
+                                            <img src="/static/images/t4.png"
+                                                style="height: 60px; width: 160px;"
+                                                alt draggable="false"> </div>
+                                    </li>
+                                    <li
+                                        style="float: left; display: block; width: 190.833px;">
+                                        <div class="clint_logo">
+                                            <div class="hover_line"></div>
+                                            <img src="/static/images/t5.png"
+                                                style="height: 60px; width: 160px;"
+                                                alt draggable="false"> </div>
+                                    </li>
+                                    <li
+                                        style="float: left; display: block; width: 190.833px;">
+                                        <div class="clint_logo">
+                                            <div class="hover_line"></div>
+                                            <img src="/static/images/t6.png"
+                                                style="height: 60px; width: 160px;"
+                                                alt draggable="false"> </div>
+                                    </li>
+                                    <li
+                                        style="float: left; display: block; width: 190.833px;">
+                                        <div class="clint_logo">
+                                            <div class="hover_line"></div>
+                                            <img src="/static/images/t7.png"
+                                                style="height: 60px; width: 160px;"
+                                                alt draggable="false"> </div>
+                                    </li>
+                                    <li
+                                        style="float: left; display: block; width: 190.833px;">
+                                        <div class="clint_logo">
+                                            <div class="hover_line"></div>
+                                            <img src="/static/images/t8.png"
+                                                style="height: 60px; width: 160px;"
+                                                alt draggable="false"> </div>
+                                    </li>
+                                    <li
+                                        style="float: left; display: block; width: 190.833px;">
+                                        <div class="clint_logo">
+                                            <div class="hover_line"></div>
+                                            <img src="/static/images/t9.png"
+                                                style="height: 60px; width: 160px;"
+                                                alt draggable="false"> </div>
+                                    </li>
+                                    <li
+                                        style="float: left; display: block; width: 190.833px;">
+                                        <div class="clint_logo">
+                                            <div class="hover_line"></div>
+                                            <img
+                                                src="/static/images/t10.png"
+                                                style="height: 60px; width: 160px;"
+                                                alt draggable="false"> </div>
+                                    </li>
+                                    <li
+                                        style="float: left; display: block; width: 190.833px;">
+                                        <div class="clint_logo">
+                                            <div class="hover_line"></div>
+                                            <img
+                                                src="/static/images/t11.png"
+                                                style="height: 60px; width: 160px;"
+                                                alt draggable="false"> </div>
+                                    </li>
+                                    <li
+                                        style="float: left; display: block; width: 190.833px;">
+                                        <div class="clint_logo">
+                                            <div class="hover_line"></div>
+                                            <img
+                                                src="/static/images/t12.png"
+                                                style="height: 60px; width: 160px;"
+                                                alt draggable="false"> </div>
+                                    </li>
+                                    <li
+                                        style="float: left; display: block; width: 190.833px;">
+                                        <div class="clint_logo">
+                                            <div class="hover_line"></div>
+                                            <img
+                                                src="/static/images/t13.png"
+                                                style="height: 60px; width: 160px;"
+                                                alt draggable="false"> </div>
+                                    </li>
+                                    <li
+                                        style="float: left; display: block; width: 190.833px;">
+                                        <div class="clint_logo">
+                                            <div class="hover_line"></div>
+                                            <img src="/static/images/t14.png"
+                                                style="height: 60px; width: 160px;"
+                                                alt draggable="false"> </div>
+                                    </li>
+                                    <li
+                                        style="float: left; display: block; width: 190.833px;">
+                                        <div class="clint_logo">
+                                            <div class="hover_line"></div>
+                                            <img
+                                                src="/static/images/t15.png"
+                                                style="height: 60px; width: 160px;"
+                                                alt draggable="false"> </div>
+                                    </li>
+                                    <li
+                                        style="float: left; display: block; width: 190.833px;">
+                                        <div class="clint_logo">
+                                            <div class="hover_line"></div>
+                                            <img src="/static/images/t16.png"
+                                                style="height: 60px; width: 160px;"
+                                                alt draggable="false"> </div>
+                                    </li>
+                                    <li
+                                        style="float: left; display: block; width: 190.833px;">
+                                        <div class="clint_logo">
+                                            <div class="hover_line"></div>
+                                            <img
+                                                src="/static/images/t17.png"
+                                                style="height: 60px; width: 160px;"
+                                                alt draggable="false"> </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- <ul class="flex-direction-nav">
+                                <li><a
+                                        class="flex-prev"
+                                        href="#"></a></li>
+                                <li><a
+                                        class="flex-next flex-disabled" href="#"
+                                        tabindex="-1"></a></li>
+                            </ul> -->
+                        </div>
+                    </section>
+
+                </div>
+            </div>
+            <div class="clearfix"></div>
+            <!--  -->
+
+            <!-- Footer Start -->
+            <div class="blockcode">
+                <!-- <div class="header">Footer</div> -->
+
+                <footer class="page-footer shadow footer-dark bg-dark">
+                    <div class="d-flex flex-column mx-auto py-5"
+                        style="width: 80%">
+                        <div class="d-flex flex-wrap justify-content-between">
+                            <div class="align-self-center">
+                                <a href="/#"
+                                    class="d-flex align-items-center p-0 text-light">
+                                    <img alt="logo"
+                                        src="/static/images/main-logo.png"
+                                        width="60px" />
+                                    <span
+                                        class="ms-3 h5 font-weight-bold">My
+                                        Phone</span>
+                                </a>
+                                <div class="mt-5">
+                                    <button
+                                        class="btn btn-danger btn-flat p-2.5">
+                                        <i class="fa fa-facebook"></i>
+                                    </button>
+                                    <button
+                                        class="btn btn-danger btn-flat p-2.5">
+                                        <i class="fa fa-twitter"></i>
+                                    </button>
+                                    <button
+                                        class="btn btn-danger btn-flat p-2.5">
+                                        <i class="fa fa-instagram"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div>
+                                <p class="h5 mb-4 text-light"
+                                    style="font-weight: 600">Devwares</p>
+                                <ul class="p-0"
+                                    style="list-style: none; cursor: pointer">
+                                    <li class="my-2">
+                                        <a class="text-light"
+                                            href="/">Resources</a>
+                                    </li>
+                                    <li class="my-2">
+                                        <a class="text-light" href="/">About
+                                            Us</a>
+                                    </li>
+                                    <li class="my-2">
+                                        <a class="text-light"
+                                            href="/">Contact</a>
+                                    </li>
+                                    <li class="my-2"><a class="text-light"
+                                            href="/">Blog</a></li>
+                                </ul>
+                            </div>
+                            <div>
+                                <p class="h5 mb-4 text-light"
+                                    style="font-weight: 600">Help</p>
+                                <ul class="p-0"
+                                    style="list-style: none; cursor: pointer">
+                                    <li class="my-2">
+                                        <a class="text-light"
+                                            href="/">Support</a>
+                                    </li>
+                                    <li class="my-2">
+                                        <a class="text-light" href="/">Sign
+                                            Up</a>
+                                    </li>
+                                    <li class="my-2">
+                                        <a class="text-light" href="/">Sign
+                                            In</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div>
+                                <p class="h5 mb-4 text-light"
+                                    style="font-weight: 600">Help</p>
+                                <ul class="p-0"
+                                    style="list-style: none; cursor: pointer">
+                                    <li class="my-2">
+                                        <a class="text-light"
+                                            href="/">Support</a>
+                                    </li>
+                                    <li class="my-2">
+                                        <a class="text-light" href="/">Sign
+                                            Up</a>
+                                    </li>
+                                    <li class="my-2">
+                                        <a class="text-light" href="/">Sign
+                                            In</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <small class="text-center mt-5 text-light">&copy;
+                            Devwares,
+                            2020. All
+                            rights reserved.</small>
+                    </div>
+                </footer>
+            </div>
+            <!-- Footer End -->
+
+        </body>
+    </html>

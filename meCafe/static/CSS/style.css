@@ -1,0 +1,48 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+.navbar {
+    background-color: bisque !important;
+}
+
+.navbar-nav {
+    margin-left: 45% !important;
+}
+
+.carousel img {
+    /* opacity: 0.8; */
+    filter: brightness(80%);
+}
+
+
+.container {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* .container img {
+    vertical-align: middle;
+} */
+
+.content {
+    position: absolute;
+    top: 30%;
+    left: 20px;
+    /* Black background with 0.5 opacity */
+    color: #f1f1f1;
+    width: 100%;
+    padding: 20px;
+
+}
+
+.content h5 {
+    font-size: 70px !important;
+    font-family: "Alice", serif;
+    font-weight: 700;
+    font-style: normal;
+}
